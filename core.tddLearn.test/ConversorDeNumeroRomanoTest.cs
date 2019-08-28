@@ -291,7 +291,7 @@ namespace Tests
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("XXIV");
 
-            Assert.AreEqual(4, numero);
+            Assert.AreEqual(24, numero);
         }
 
         [Test, Category("Subtração")]
