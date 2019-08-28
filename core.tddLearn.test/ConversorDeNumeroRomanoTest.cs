@@ -237,7 +237,7 @@ namespace Tests
         #region Terceiro Cenário - Mais de dois símbolos em sequência.
 
         [Test, Category("Adição")]
-        public void DeveEntenderDoisSimbolosComoXXII()
+        public void DeveEntenderMaisSimbolosComoXXII()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("XXII");
@@ -246,7 +246,7 @@ namespace Tests
         }
 
         [Test, Category("Adição")]
-        public void DeveEntenderDoisSimbolosComoMDX()
+        public void DeveEntenderMaisSimbolosComoMDX()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("MDX");
@@ -255,7 +255,7 @@ namespace Tests
         }
 
         [Test, Category("Adição")]
-        public void DeveEntenderDoisSimbolosComoMDXV()
+        public void DeveEntenderMaisSimbolosComoMDXV()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("MDXV");
@@ -264,7 +264,7 @@ namespace Tests
         }
 
         [Test, Category("Adição")]
-        public void DeveEntenderDoisSimbolosComoDCLXII()
+        public void DeveEntenderMaisSimbolosComoDCLXII()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("DCLXII");
@@ -274,15 +274,55 @@ namespace Tests
 
         #endregion
 
-        #region Quarto Cenário - .
+        #region Quarto Cenário - Símbolos em sequência e/ou invertidos.
 
         [Test, Category("Subtração")]
-        public void DeveEntenderDoisSimbolosComoIV()
+        public void DeveEntenderSimbolosInvertidosComoIV()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("IV");
 
             Assert.AreEqual(4, numero);
+        }
+
+        [Test, Category("Subtração")]
+        public void DeveEntenderSimbolosInvertidosComoXXIV()
+        {
+            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+            int numero = romano.Converte("XXIV");
+
+            Assert.AreEqual(4, numero);
+        }
+
+        [Test, Category("Subtração")]
+        public void DeveEntenderSimbolosInvertidosComoDXLIIX()
+        {
+            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+            int numero = romano.Converte("DXLIIX");
+
+            Assert.AreEqual(548, numero);
+        }
+
+        #endregion
+
+        #region Quinto Cenário - Testes que devem falhar - Símbolos com sequência incorreta.
+
+        [Test, Category("Falha")]
+        public void DeveFalharComQuatroSimbolosIguaisIIII()
+        {
+            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+            int numero = romano.Converte("IIII");
+
+            Assert.AreEqual(4, numero);
+        }
+
+        [Test, Category("Falha")]
+        public void DeveFalharComQuatroSimbolosIguaisVVVV()
+        {
+            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+            int numero = romano.Converte("VVVV");
+
+            Assert.AreEqual(20, numero);
         }
 
         #endregion
