@@ -1,11 +1,23 @@
 # core.tddLearn
 This repository contains Hands on Test Driven Development (TDD) with Mock Objects, Design Principles, Functional tests and Emergent Properties.
 
+## Table of Content
+ - Prerequisites
+ - Creating Dotnet test project with CLI
+ - Running tests
+ - Generate reports using ReportGenerator (Trxer)
+ - Running Code Coverage
+ - Create a pipeline with Powershell script
+
 Para este projeto usaremos a ferramente de desenvolvimento .Net CLI.
 https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore21
 
+### Prerequisites
+
 Verifique a versão instalado do .Net Core, deve ser superior a 2.1.
 > dotnet --version
+
+### Creating Dotnet test project with CLI
 
 Verificar se o template do nunit já está instalado.
 > dotnet new nunit -l
@@ -53,6 +65,17 @@ Criação de um projeto de interfaceamento web com verbos HTTP (raiz do diretór
 > dotnet new webapi -n core.tddLearn.webapi
 > dotnet sln core.tddLearn.sln add core.tddLearn.webapi/core.tddLearn.webapi.csproj
 > dotnet sln list
+
+### Running tests
+
+> cd core.tddLearn.test
+> dotnet test
+
+### Generate reports using ReportGenerator (Trxer)
+
+### Running Code Coverage
+
+### Create a pipeline with Powershell script
 
 Criando testes automáticos de integração para as APIs com Postman.
 
