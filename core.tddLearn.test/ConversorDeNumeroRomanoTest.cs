@@ -313,7 +313,7 @@ namespace Tests
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("IIII");
 
-            Assert.AreEqual(4, numero);
+            Assert.AreEqual(0, numero);
         }
 
         [Test, Category("Falha")]
@@ -322,7 +322,7 @@ namespace Tests
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
             int numero = romano.Converte("VVVV");
 
-            Assert.AreEqual(20, numero);
+            Assert.AreEqual(0, numero);
         }
 
         #endregion

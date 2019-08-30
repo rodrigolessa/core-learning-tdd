@@ -37,10 +37,15 @@ Cria uma pasta para o Projeto/Solução.
 > mkdir core.tddLearn
 > cd core.tddLearn
 
-Criação do projeto de teste com C# com uma classe fixture para o teste no diretório corrente.
+Primeiro criamos o projeto de teste com C# e uma classe fixture para o teste. Orientação do TDD, desenvolvimento guiado pelos testes ou ciclo red-green-refactor. O primeiro teste falha só depois implementamos a classe com as regras de negócio.
 > dotnet new nunit -n core.tddLearn.test
 > cd core.tddLearn.test
 > dotnet new nunit-test -n ConversorDeNumeroRomanoTest -o .
+
+Vantagens do TDD
+ - Ter foco no teste e não na implementação
+ - Evitar soluções complexas (YAGNI)
+ - O código já nasce testado
 
 Depois de escrever nosso primeiro teste se tentarmos executar ou fazer o build do projeto ele vai falhar, pois não existe a classe de referência.
 > dotnet build

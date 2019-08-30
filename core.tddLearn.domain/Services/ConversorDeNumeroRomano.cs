@@ -20,9 +20,18 @@ namespace core.tddLearn.domain
         public int Converte(string numeroEmRomano)
         {
             int valor = 0;
+            int anterior = 0;
 
-            for (int i = 0; i < numeroEmRomano.Length; i++)
-                valor += mapaDeAlgarismo[numeroEmRomano[i].ToString()];
+            for (int i = numeroEmRomano.Length - 1; i >= 0; i--)
+            {
+                int arabico = mapaDeAlgarismo[numeroEmRomano[i].ToString()];
+                if (arabico < anterior)
+                    arabico *= -1;
+                else
+                    anterior = arabico;
+
+                valor += arabico;
+            }
 
             return valor;
         }
