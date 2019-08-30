@@ -25,8 +25,12 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore21
   - .Net Core Test Explorer
   - Coverage Gutter
 
-Verifique a versão instalado do .Net Core, deve ser superior a 2.1.
+Verifique a versão instalado do .Net Core, deve ser superior a 2.0. This will show the list of all available SDKs on your system.
 > dotnet --version
+> dotnet --info
+
+If necessary, you can changed the current SDK version of the project, you can upgrade, or downgrade the SDK.
+> dotnet new globaljson --sdk-version 2.2.108 --force
 
 Verificar se o template do nunit já está instalado.
 > dotnet new nunit -l
