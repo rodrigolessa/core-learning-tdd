@@ -21,6 +21,20 @@ namespace core.tddLearn.domain
         {
             int valor = 0;
             int anterior = 0;
+            string ultimo = string.Empty;
+            int repetidos = 0;
+
+            for (int i = 0; i < numeroEmRomano.Length; i++){
+                if (ultimo == numeroEmRomano[i].ToString()){
+                    repetidos++;
+                    if (repetidos > 2)
+                        return 0;
+                }
+                else 
+                    repetidos = 0;
+                    
+                ultimo = numeroEmRomano[i].ToString();
+            }
 
             for (int i = numeroEmRomano.Length - 1; i >= 0; i--)
             {
