@@ -1,5 +1,5 @@
 language: csharp
-solution: solution-name.sln
+solution: core.tddLearn.sln
 mono: none
 dotnet: 2.2.401
 install:
@@ -7,5 +7,5 @@ install:
  - nuget install NUnit.Console -Version 3.10.0 -OutputDirectory testrunner
 script:
  - dotnet restore
- - msbuild /p:Configuration=Release solution-name.sln
- - mono ./testrunner/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe ./MyProject.Tests/bin/Release/MyProject.Tests.dll
+ - msbuild /p:Configuration=Release core.tddLearn.sln
+ - mono ./testrunner/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe ./core.tddLearn.test/bin/Release/core.tddLearn.test.dll
