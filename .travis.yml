@@ -8,4 +8,4 @@ install:
 script:
  - dotnet restore
  - msbuild /p:Configuration=Release core.tddLearn.sln
- - mono ./testrunner/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe ./core.tddLearn.test/bin/Release/core.tddLearn.test.dll
+ - mono ./testrunner/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe ./core.tddLearn.test/bin/Release/netcoreapp2.2/core.tddLearn.test.dll

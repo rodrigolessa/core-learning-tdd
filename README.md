@@ -3,6 +3,8 @@ This repository contains Hands on Test Driven Development (TDD) with Mock Object
 
 [![Build Status](https://rodrigolessa.visualstudio.com/core.tddLearn/_apis/build/status/rodrigolessa.core.tddLearn?branchName=master)](https://rodrigolessa.visualstudio.com/core.tddLearn/_build?definitionId=2&_a=summary&view=runs)
 
+[![Build Status](https://travis-ci.org/rodrigolessa/core.tddLearn.svg?branch=master)](https://travis-ci.org/rodrigolessa/core.tddLearn)
+
 ## Table of Content
  - Prerequisites
  - Creating Dotnet test project with CLI
@@ -54,7 +56,7 @@ Vantagens do TDD
  - O código já nasce testado
 
 Depois de escrever nosso primeiro teste se tentarmos executar ou fazer o build do projeto ele vai falhar, pois não existe a classe de referência.
-> dotnet build
+> dotnet build --configuration Release
 
 Criação de um projeto para as regras do domínio, onde vamos criar a classe que vai ser testada (orientação do TDD, red-green-refactor). Adicionando uma referência do projeto de regras ao projeto de teste e criando a classe para o build do projeto não falhar. A implementação da classe deve ser o mais simples possível.
 > cd ..
