@@ -63,6 +63,20 @@ Criação de um projeto para as regras do domínio, onde vamos criar a classe qu
 
 ### Running tests
 
+#### User case: The Roman Numbers
+
+#### Basic Symbols
+
+| 1 | 5 | 10 | 50 | 100 | 500 | 1000 |
+|:-:|:-:|:--:|:--:|:---:|:---:|:----:|
+| I | V | X  | L  | C   | D   | M    |
+
+#### Basic Combinations
+
+| 2  | 3   | 4  | 6  | 7   | 8    | 9  | 40 | 90 | 400 | 900 |
+|:--:|:---:|:--:|:--:|:---:|:----:|:--:|:--:|:--:|:---:|:---:|
+| II | III | IV | VI | VII | VIII | IX | XL | XC | CD  | CM  |
+
 Depois de implementar nossa classe, podemos executar o teste que vai falhar.
 > cd core.tddLearn.test
 > dotnet list reference

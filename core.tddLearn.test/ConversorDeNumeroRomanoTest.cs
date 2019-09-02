@@ -237,6 +237,15 @@ namespace Tests
         #region Terceiro Cenário - Mais de dois símbolos em sequência.
 
         [Test, Category("Adição")]
+        public void DeveEntenderMaisSimbolosComoIII()
+        {
+            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
+            int numero = romano.Converte("III");
+
+            Assert.AreEqual(3, numero);
+        }
+
+        [Test, Category("Adição")]
         public void DeveEntenderMaisSimbolosComoXXII()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
