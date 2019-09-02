@@ -1,9 +1,7 @@
 ﻿# core.tddLearn
 This repository contains Hands on Test Driven Development (TDD) with Mock Objects, Design Principles, Functional tests and Emergent Properties.
 
-[![Build Status](https://rodrigolessa.visualstudio.com/core.tddLearn/_apis/build/status/rodrigolessa.core.tddLearn?branchName=master)](https://rodrigolessa.visualstudio.com/core.tddLearn/_build?definitionId=2&_a=summary&view=runs)
-
-[![Build Status](https://travis-ci.org/rodrigolessa/core.tddLearn.svg?branch=master)](https://travis-ci.org/rodrigolessa/core.tddLearn)
+[![Build Status](https://rodrigolessa.visualstudio.com/core.tddLearn/_apis/build/status/rodrigolessa.core.tddLearn?branchName=master)](https://rodrigolessa.visualstudio.com/core.tddLearn/_build?definitionId=2&_a=summary&view=runs) [![Build Status](https://travis-ci.org/rodrigolessa/core.tddLearn.svg?branch=master)](https://travis-ci.org/rodrigolessa/core.tddLearn)
 
 ## Table of Content
  - Prerequisites

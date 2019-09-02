@@ -3,7 +3,7 @@ solution: core.tddLearn.sln
 mono: none
 dotnet: 2.2.401
 install:
- - nuget restore solution-name.sln
+ - nuget restore core.tddLearn.sln
  - nuget install NUnit.Console -Version 3.10.0 -OutputDirectory testrunner
 script:
  - dotnet restore
