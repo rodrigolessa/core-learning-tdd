@@ -100,6 +100,14 @@ dotnet test
 
 ### Generate reports using ReportGenerator (Trxer)
 
+### Generate reports using Extent
+
+```shell
+cd core.tddLearn.test
+dotnet add package extent
+dotnet test
+```
+
 ### Running Code Coverage
 
 ### Organizando os projetos
