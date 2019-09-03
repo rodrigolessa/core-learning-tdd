@@ -29,8 +29,8 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore21
 
 Verifique a versão instalado do .Net Core, deve ser superior a 2.0. This will show the list of all available SDKs on your system.
 ```shell
-> dotnet --version
-> dotnet --info
+dotnet --version
+dotnet --info
 ```
 
 If necessary, you can changed the current SDK version of the project, you can upgrade, or downgrade the SDK.
