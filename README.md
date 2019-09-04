@@ -100,7 +100,15 @@ dotnet test
 
 ### Generate reports using ReportGenerator (Trxer)
 
+```shell
+cd core.tddLearn.test
+dotnet add package NUnit.ConsoleRunner
+nunit3-console bin\Debug\netcoreapp2.2\core.tddLearn.test.dll
+```
+
 ### Generate reports using Extent
+
+Created a report file from NUnit results.xml.
 
 ```shell
 cd core.tddLearn.test
