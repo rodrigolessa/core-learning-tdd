@@ -150,11 +150,27 @@ dotnet new webapi -n core.tddLearn.webapi
 
 Discoverability with Swagger.
 
+### Utilizando este repositório
+
+Ao clonar o repositório é necessário recarregar as dependências dos projetos
+```shel
+dotnet restore
+dotnet build
+```
+
 ### Referências
 
 Este projeto adota as boas práticas descritas no Livro:
 Test Driven Development - Teste e design no mundo real
 By Mauricio Aniche
 
-Tutorial util para criar os templates customizados para teu projeto (qualquer classe que for se repetir muito ou verbosa):
+Tutorial util para criar os templates customizados para teu projeto (qualquer classe que for se repetir muito ou for muito verbosa):
 https://docs.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-item-template
+
+Visual Studio Code working with projects settings using .code-workspace
+https://stackoverflow.com/questions/44629890/what-is-a-workspace-in-vs-code
+
+Verificar templates disponíveis para criação de projetos e classes
+```shel
+dotnet new --list
+```
