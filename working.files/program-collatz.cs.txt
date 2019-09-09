@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using console1 = System.Console;
+using DB1.AvaliacaoTecnica.Infrastructure.Extensions;
+
+namespace DB1.AvaliacaoTecnica.Console
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            console1.WriteLine("Parte 1.1. ");
+
+            int maiorInicial = 2;
+            int maiorSequencia = 0;
+            var tempo = Stopwatch.StartNew();
+            var sequencias = new Dictionary<int, int>();
+
+            for (int x = 2; x <= 1000000; x++)
+            {
+                int contador = 1;
+
+                for (int n = x; n > 1; n = CondicaoDeCollatz(n))
+                {
+                    if (sequencias.ContainsKey(n))
+                    {
+                        contador += sequencias[n] - 1;
+                        break;
+                    }
+
+                    contador++;
+
+                    //if (x == 13)
+                    //console1.Write(n.ToString() + " > ");
+                }
+
+                sequencias.Add(x, contador);
+
+                if (contador > maiorSequencia)
+                {
+                    maiorInicial = x;
+                    maiorSequencia = contador;
+                }
+            }
+
+            tempo.Stop(); //inicial 6335 milissegundos
+
+            console1.WriteLine(" ");
+            console1.WriteLine(" - Número inicial - " + maiorInicial.ToString() + " que produziu uma sequencia com " + maiorSequencia.ToString() + " termos;");
+            console1.WriteLine(" - Em " + tempo.ElapsedMilliseconds.ToString() + " milissegundos.");
+
+
+
+            console1.WriteLine(" ");
+            console1.WriteLine("Parte 1.2. ");
+
+            int[] numeros = { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 };
+            //int[] numeros = { 1, 3, 5, 13, 21, 55, 89 };
+
+            console1.WriteLine(" ");
+            console1.WriteLine(" - " + TipoDoConjunto(numeros));
+
+
+
+            console1.WriteLine(" ");
+            console1.WriteLine("Parte 1.3. ");
+
+            int[] primeiroArray = { 1, 3, 7, 29, 42, 98, 234, 93 };
+            int[] segundoArray = { 4, 6, 93, 7, 55, 32, 3 };
+
+            var naoContidos = primeiroArray.Where(x => !segundoArray.Contains(x));
+
+            console1.WriteLine(" ");
+            console1.WriteLine(" - Elementos de A que não estão contidos em B:");
+            console1.Write(" - { ");
+            foreach (int y in naoContidos)
+                console1.Write(y.ToString() + ", ");
+            console1.Write(" } ");
+
+            console1.ReadKey();
+        }
+
+        private static int CondicaoDeCollatz(int n)
+        {
+            return n.EhPar() ? n / 2 : (3 * n) + 1;
+        }
+
+        private static string TipoDoConjunto(int[] conjunto)
+        {
+            if (conjunto.Where(x => x.EhPar()).Any())
+                return "O array possui números pares!";
+            else
+                return "O array contém somente números ímpares!";
+        }
+    }
+}
