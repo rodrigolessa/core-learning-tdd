@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\core.tddLearn.domain\core.tddLearn.domain.csproj" />
+    <ProjectReference Include="..\core.learning.tdd.romanos\core.learning.tdd.romanos.csproj" />
   </ItemGroup>
 
 </Project>

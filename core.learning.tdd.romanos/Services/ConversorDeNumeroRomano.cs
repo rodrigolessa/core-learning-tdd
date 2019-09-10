@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace core.tddLearn.domain
+namespace core.learning.tdd.romanos
 {
     public class ConversorDeNumeroRomano
     {

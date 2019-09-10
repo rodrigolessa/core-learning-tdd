@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace core.tddLearn.webapi.Controllers
+namespace core.learning.tdd.webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

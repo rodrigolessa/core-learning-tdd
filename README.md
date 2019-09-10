@@ -1,7 +1,7 @@
-﻿# core.tddLearn
+﻿# core.learning.tdd
 This repository contains Hands on Test Driven Development (TDD) with Mock Objects, Design Principles, Functional tests and Emergent Properties.
 
-[![Build Status](https://rodrigolessa.visualstudio.com/core.tddLearn/_apis/build/status/rodrigolessa.core.tddLearn?branchName=master)](https://rodrigolessa.visualstudio.com/core.tddLearn/_build?definitionId=2&_a=summary&view=runs) [![Build Status](https://travis-ci.org/rodrigolessa/core.tddLearn.svg?branch=master)](https://travis-ci.org/rodrigolessa/core.tddLearn)
+[![Build Status](https://rodrigolessa.visualstudio.com/core.learning.tdd/_apis/build/status/rodrigolessa.core.learning.tdd?branchName=master)](https://rodrigolessa.visualstudio.com/core.learning.tdd/_build?definitionId=2&_a=summary&view=runs) [![Build Status](https://travis-ci.org/rodrigolessa/core.learning.tdd.svg?branch=master)](https://travis-ci.org/rodrigolessa/core.learning.tdd)
 
 ## Table of Content
  - Prerequisites
@@ -47,14 +47,14 @@ dotnet new nunit -l
 
 Cria uma pasta para o Projeto/Solução.
 ```shell
-mkdir core.tddLearn
-cd core.tddLearn
+mkdir core-learning-tdd
+cd core-learning-tdd
 ```
 
 Primeiro criamos o projeto de teste com C# e uma classe fixture para o teste. Orientação do TDD, desenvolvimento guiado pelos testes ou ciclo red-green-refactor. O primeiro teste falha só depois implementamos a classe com as regras de negócio.
 ```shell
-dotnet new nunit -n core.tddLearn.test
-cd core.tddLearn.test
+dotnet new nunit -n core.learning.tdd.test
+cd core.learning.tdd.test
 dotnet new nunit-test -n ConversorDeNumeroRomanoTest -o .
 ```
 
@@ -71,9 +71,11 @@ dotnet build --configuration Release
 Criação de um projeto para as regras do domínio, onde vamos criar a classe que vai ser testada (orientação do TDD, red-green-refactor). Adicionando uma referência do projeto de regras ao projeto de teste e criando a classe para o build do projeto não falhar. A implementação da classe deve ser o mais simples possível.
 ```shell
 cd ..
-dotnet new classlib -n core.tddLearn.domain -f netcoreapp3.0 -lang C#
-dotnet add core.tddLearn.test/core.tddLearn.test.csproj reference core.tddLearn.domain/core.tddLearn.domain.csproj
+dotnet new classlib -n core.learning.tdd.domain -f netcoreapp2.2 -lang C#
+dotnet add core.learning.tdd.test/core.learning.tdd.test.csproj reference core.learning.tdd.domain/core.learning.tdd.domain.csproj
 ```
+
+dotnet add core.learning.tdd.test.csproj reference core.learning.tdd.domain/core.learning.tdd.domain.csproj
 
 ### Running tests
 
@@ -93,7 +95,7 @@ dotnet add core.tddLearn.test/core.tddLearn.test.csproj reference core.tddLearn.
 
 Depois de implementar nossa classe, podemos executar o teste que vai falhar.
 ```shell
-cd core.tddLearn.test
+cd core.learning.tdd.test
 dotnet list reference
 dotnet test
 ```
@@ -101,9 +103,9 @@ dotnet test
 ### Generate reports using ReportGenerator (Trxer)
 
 ```shell
-cd core.tddLearn.test
+cd core.learning.tdd.test
 dotnet add package NUnit.ConsoleRunner
-nunit3-console bin\Debug\netcoreapp2.2\core.tddLearn.test.dll
+nunit3-console bin\Debug\netcoreapp2.2\core.learning.tdd.test.dll
 ```
 
 ### Generate reports using Extent
@@ -111,7 +113,7 @@ nunit3-console bin\Debug\netcoreapp2.2\core.tddLearn.test.dll
 Created a report file from NUnit results.xml.
 
 ```shell
-cd core.tddLearn.test
+cd core.learning.tdd.test
 dotnet add package extent
 dotnet test
 ```
@@ -123,9 +125,9 @@ dotnet test
 Cria um arquivo de Solução que vai conter os projetos.
 ```shell
 dotnet new sln
-dotnet sln core.tddLearn.sln add core.tddLearn.domain/core.tddLearn.domain.csproj
-dotnet sln core.tddLearn.sln add core.tddLearn.test/core.tddLearn.test.csproj
-dotnet sln core.tddLearn.sln add core.tddLearn.webapi/core.tddLearn.webapi.csproj
+dotnet sln core.learning.tdd.sln add core.learning.tdd.domain/core.learning.tdd.domain.csproj
+dotnet sln core.learning.tdd.sln add core.learning.tdd.test/core.learning.tdd.test.csproj
+dotnet sln core.learning.tdd.sln add core.learning.tdd.webapi/core.learning.tdd.webapi.csproj
 dotnet sln list
 ```
 
@@ -137,7 +139,7 @@ dotnet sln list
 
 Criação do projeto de teste com linguagem funcional.
 ```shell
-dotnet new nunit -lang F# -n core.tddLearnFSharp.test
+dotnet new nunit -lang F# -n core.learning.tddFSharp.test
 ```
 
 ### Implementar testes de API com Postman
@@ -145,7 +147,7 @@ dotnet new nunit -lang F# -n core.tddLearnFSharp.test
 Criando testes automáticos de integração para as APIs com Postman.
 Criação de um projeto de interfaceamento web com verbos HTTP (raiz do diretório).
 ```shell
-dotnet new webapi -n core.tddLearn.webapi
+dotnet new webapi -n core.learning.tdd.webapi
 ```
 
 Discoverability with Swagger.

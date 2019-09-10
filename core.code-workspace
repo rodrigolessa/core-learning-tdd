@@ -7,13 +7,22 @@
   },
   "folders": [
     {
-      "path": "core.tddLearn.test"
+      "path": "core.learning.tdd.romanos"
     },
     {
-      "path": "core.tddLearn.domain"
+      "path": "core.learning.tdd.romanos.test"
     },
     {
-      "path": "core.tddLearn.webapi"
+      "path": "core.learning.tdd.romanos.repository"
+    },
+    {
+      "path": "core.learning.tdd.application"
+    },
+    {
+      "path": "core.learning.tdd.webapi"
+    },
+    {
+      "path": "core.learning.tdd.webapp"
     }
   ]
 }

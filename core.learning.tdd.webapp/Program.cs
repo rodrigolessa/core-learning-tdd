@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace core.tddLearn.webapi
+namespace core.learning.tdd.webapp
 {
     public class Program
     {
