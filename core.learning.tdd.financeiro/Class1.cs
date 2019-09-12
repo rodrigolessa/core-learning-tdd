@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace core.learning.tdd.romanos.repository
+namespace core.learning.tdd.financeiro
 {
     public class Class1
     {

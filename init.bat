@@ -8,18 +8,22 @@ dotnet new globaljson --sdk-version 2.2.108 --force
 REM Projeto para regras de negócio do domínio
 dotnet new classlib -n core.learning.tdd.romanos -f netcoreapp2.2 -lang C#
 
-REM Projeto para interface com o banco de dados
-dotnet new classlib -n core.learning.tdd.romanos.repository -f netcoreapp2.2 -lang C#
+REM Projetos para regras de Cálculos de salário dos Funcionários
+dotnet new classlib -n core.learning.tdd.financeiro -f netcoreapp2.2 -lang C#
 
-REM Projeto para Testes do domínio
-dotnet new nunit -n core.learning.tdd.romanos.test -f netcoreapp2.2 -lang C#
+REM Projeto para interface com o banco de dados
+dotnet new classlib -n core.learning.tdd.financeiro.repository -f netcoreapp2.2 -lang C#
 
 REM Projetos para testes e domínio do Contencioso
-dotnet new nunit -n core.learning.tdd.contencioso -f netcoreapp2.2 -lang C#
-dotnet new nunit -n core.learning.tdd.contencioso.test -f netcoreapp2.2 -lang C#
+dotnet new classlib -n core.learning.tdd.contencioso -f netcoreapp2.2 -lang C#
 
 REM Projeto para interface com o banco de dados
 dotnet new classlib -n core.learning.tdd.application -f netcoreapp2.2 -lang C#
+
+REM Projeto para Testes do domínio
+dotnet new nunit -n core.learning.tdd.romanos.test -f netcoreapp2.2 -lang C#
+dotnet new nunit -n core.learning.tdd.financeiro.test -f netcoreapp2.2 -lang C#
+dotnet new nunit -n core.learning.tdd.contencioso.test -f netcoreapp2.2 -lang C#
 
 REM Projeto de interfaceamento web
 dotnet new webapi -n core.learning.tdd.webapi -f netcoreapp2.2 -lang C#
@@ -34,10 +38,12 @@ dir
 
 REM Adicionar projetos
 dotnet sln add core.learning.tdd.romanos\core.learning.tdd.romanos.csproj
-dotnet sln add core.learning.tdd.romanos.repository\core.learning.tdd.romanos.repository.csproj
 dotnet sln add core.learning.tdd.romanos.test\core.learning.tdd.romanos.test.csproj
 dotnet sln add core.learning.tdd.contencioso\core.learning.tdd.contencioso.csproj
 dotnet sln add core.learning.tdd.contencioso.test\core.learning.tdd.contencioso.test.csproj
+dotnet sln add core.learning.tdd.financeiro\core.learning.tdd.financeiro.csproj
+dotnet sln add core.learning.tdd.financeiro.test\core.learning.tdd.financeiro.test.csproj
+dotnet sln add core.learning.tdd.financeiro.repository\core.learning.tdd.financeiro.repository.csproj
 dotnet sln add core.learning.tdd.application\core.learning.tdd.application.csproj
 dotnet sln add core.learning.tdd.webapi\core.learning.tdd.webapi.csproj
 dotnet sln add core.learning.tdd.webapp\core.learning.tdd.webapp.csproj
