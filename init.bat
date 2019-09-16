@@ -18,6 +18,10 @@ REM Projetos para testes e domínio do Contencioso
 dotnet new nunit -n core.learning.tdd.contencioso -f netcoreapp2.2 -lang C#
 dotnet new nunit -n core.learning.tdd.contencioso.test -f netcoreapp2.2 -lang C#
 
+REM Projetos para testes e domínio do Financeiro
+dotnet new nunit -n core.learning.tdd.financeiro -f netcoreapp2.2 -lang C#
+dotnet new nunit -n core.learning.tdd.financeiro.test -f netcoreapp2.2 -lang C#
+
 REM Projeto para interface com o banco de dados
 dotnet new classlib -n core.learning.tdd.application -f netcoreapp2.2 -lang C#
 
