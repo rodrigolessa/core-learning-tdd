@@ -127,7 +127,7 @@ Cria um arquivo de Solução que vai conter os projetos.
 dotnet new sln
 dotnet sln core.learning.tdd.sln add core.learning.tdd.domain/core.learning.tdd.domain.csproj
 dotnet sln core.learning.tdd.sln add core.learning.tdd.test/core.learning.tdd.test.csproj
-dotnet sln core.learning.tdd.sln add core.learning.tdd.webapi/core.learning.tdd.webapi.csproj
+
 dotnet sln list
 ```
 
@@ -148,6 +148,7 @@ Criando testes automáticos de integração para as APIs com Postman.
 Criação de um projeto de interfaceamento web com verbos HTTP (raiz do diretório).
 ```shell
 dotnet new webapi -n core.learning.tdd.webapi
+dotnet sln add core.learning.tdd.webapi/core.learning.tdd.webapi.csproj
 ```
 
 Discoverability with Swagger.
