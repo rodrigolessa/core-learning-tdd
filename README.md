@@ -14,6 +14,8 @@ This repository contains Hands on Test Driven Development (TDD) with Mock Object
  - Create a pipeline on Azure DevOps platform
  - Implementar testes no paradigma funcional
  - Implementar testes de API com Postman
+ - Creating especification test wirh Gauge
+ - Design Patterns and Development Strategies
  - Referências
 
 Para este projeto usaremos a ferramente de desenvolvimento .Net CLI.
@@ -160,6 +162,40 @@ Ao clonar o repositório é necessário recarregar as dependências dos projetos
 dotnet restore
 dotnet build
 ```
+
+### Creating acceptance testing project wirh Gauge
+
+Reference - https://gauge.org/
+
+Installation - Run from PowerShell command with admin rights.
+```shel
+choco install gauge # installation
+```
+
+```shel
+mkdir core.learning.gauge
+cd    core.learning.gauge
+
+gauge init dotnet
+
+gauge run specs/
+```
+
+
+### Design Patterns and Development Strategies
+
+PageObjects: 
+A simple abstraction of the UI of your web app
+Best reference to https://martinfowler.com/bliki/PageObject.html
+
+AcceptanceTests: 
+Use coarse-grained UI tests to help structure development work.
+
+RegressionTests: 
+Collect the actions of multiple AcceptanceTests into one place for ease of maintenance.
+
+DomainDrivenDesign: 
+Express your tests in the language of the end-user of the app.
 
 ### Referências
 
