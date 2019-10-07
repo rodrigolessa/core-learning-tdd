@@ -1,6 +1,6 @@
 @echo off
 
-@set scriptPath=%~dp0%run_trx_report_core.ps1
+@set scriptPath=%~dp0%run-trx-report-core.ps1
 @set htmlReportPath=%~dp0%Reports\index.html
 
 rem echo %htmlReportPath%

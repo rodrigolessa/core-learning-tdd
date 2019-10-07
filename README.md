@@ -28,6 +28,10 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore21
  - Visual Studio Code with some plugins:
   - .Net Core Test Explorer
   - Coverage Gutter
+ Or
+ - Visual Studio 2019
+  - Unit Test Generator
+  - https://github.com/nunit/nunit-vs-testgenerator/releases
 
 Verifique a versão instalado do .Net Core, deve ser superior a 2.0. This will show the list of all available SDKs on your system.
 ```shell
@@ -107,6 +111,9 @@ dotnet test
 ```shell
 cd core.learning.tdd.test
 dotnet add package NUnit.ConsoleRunner
+Or
+dotnet add package NUnit.Console
+dotnet add package ReportUnit
 nunit3-console bin\Debug\netcoreapp2.2\core.learning.tdd.test.dll
 ```
 

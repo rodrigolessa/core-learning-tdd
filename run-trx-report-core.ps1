@@ -12,7 +12,6 @@ $reportFolder = "Reports";
 $reportHtml = "index.html";
 
 # Move to current script folder
-# cmd /c cd $PSScriptRoot
 Set-Location $PSScriptRoot
 
 # Se NÃO existir cria a raiz do diretório físico

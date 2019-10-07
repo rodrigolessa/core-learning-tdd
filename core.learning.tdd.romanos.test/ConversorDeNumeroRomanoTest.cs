@@ -3,6 +3,7 @@ using core.learning.tdd.romanos;
 
 namespace Tests
 {
+    // [SetUpFixture] // SetUpFixture faz com que o Setup e o TearDown execute uma vez
     [TestFixture]
     public class ConversorDeNumeroRomanoTest
     {
@@ -27,10 +28,15 @@ namespace Tests
         // TODO: Nenhum símbolo pode ser repetido lado a lado por mais de 3 vezes.
         // Exemplo: o número 4 é representado pelo número IV (5 - 1) e não pelo número IIII.
 
+        //[OneTimeSetUp]
+        //public void RunBeforeAnyTests()
         [SetUp]
         public void Setup()
         {
         }
+
+        //[TearDown]
+        //public void RunAfterAnyTests() { }
 
         #region Primeiro Cenário - Representação dos Algarismos.
 
