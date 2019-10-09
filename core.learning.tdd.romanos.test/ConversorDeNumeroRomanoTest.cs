@@ -40,7 +40,7 @@ namespace Tests
 
         #region Primeiro Cenário - Representação dos Algarismos.
 
-        [Test, Category("Representação")]
+        [Test] // , Category("Representação")]
         public void DeveEntenderOSimboloI()
         {
             ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();

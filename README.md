@@ -28,10 +28,15 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore21
  - Visual Studio Code with some plugins:
   - .Net Core Test Explorer
   - Coverage Gutter
+  - Nunit Console
+    - https://github.com/nunit/nunit-console/releases
+    - Add NUnit console to your windows PATH Variables 
+    - https://www.computerhope.com/issues/ch000549.htm
+    - C:\Program Files (x86)\NUnit.org\nunit-console\
  Or
  - Visual Studio 2019
   - Unit Test Generator
-  - https://github.com/nunit/nunit-vs-testgenerator/releases
+    - https://github.com/nunit/nunit-vs-testgenerator/releases
 
 Verifique a versão instalado do .Net Core, deve ser superior a 2.0. This will show the list of all available SDKs on your system.
 ```shell
@@ -54,13 +59,20 @@ dotnet new nunit -l
 Cria uma pasta para o Projeto/Solução.
 ```shell
 mkdir core-learning-tdd
-cd core-learning-tdd
+   cd core-learning-tdd
 ```
 
 Primeiro criamos o projeto de teste com C# e uma classe fixture para o teste. Orientação do TDD, desenvolvimento guiado pelos testes ou ciclo red-green-refactor. O primeiro teste falha só depois implementamos a classe com as regras de negócio.
 ```shell
-dotnet new nunit -n core.learning.tdd.test
-cd core.learning.tdd.test
+dotnet new nunit -n core.learning.tdd.romanos.test
+
+cd core.learning.tdd.romanos.test
+
+dotnet add package NUnit --version 3.12.0
+dotnet add package NUnit.Console --version 3.10.0
+dotnet add package NUnit.ConsoleRunner --version 3.10.0
+dotnet add package NUnit3TestAdapter --version 3.15.1
+
 dotnet new nunit-test -n ConversorDeNumeroRomanoTest -o .
 ```
 
@@ -77,11 +89,10 @@ dotnet build --configuration Release
 Criação de um projeto para as regras do domínio, onde vamos criar a classe que vai ser testada (orientação do TDD, red-green-refactor). Adicionando uma referência do projeto de regras ao projeto de teste e criando a classe para o build do projeto não falhar. A implementação da classe deve ser o mais simples possível.
 ```shell
 cd ..
-dotnet new classlib -n core.learning.tdd.domain -f netcoreapp2.2 -lang C#
-dotnet add core.learning.tdd.test/core.learning.tdd.test.csproj reference core.learning.tdd.domain/core.learning.tdd.domain.csproj
-```
 
-dotnet add core.learning.tdd.test.csproj reference core.learning.tdd.domain/core.learning.tdd.domain.csproj
+dotnet new classlib -n core.learning.tdd.domain -f netcoreapp2.2 -lang C#
+dotnet add core.learning.tdd.romanos.test/core.learning.tdd.romanos.test.csproj reference core.learning.tdd.domain/core.learning.tdd.domain.csproj
+```
 
 ### Running tests
 
@@ -101,7 +112,7 @@ dotnet add core.learning.tdd.test.csproj reference core.learning.tdd.domain/core
 
 Depois de implementar nossa classe, podemos executar o teste que vai falhar.
 ```shell
-cd core.learning.tdd.test
+cd core.learning.tdd.romanos.test
 dotnet list reference
 dotnet test
 ```
@@ -109,22 +120,20 @@ dotnet test
 ### Generate reports using ReportGenerator (Trxer)
 
 ```shell
-cd core.learning.tdd.test
-dotnet add package NUnit.ConsoleRunner
-Or
-dotnet add package NUnit.Console
-dotnet add package ReportUnit
-nunit3-console bin\Debug\netcoreapp2.2\core.learning.tdd.test.dll
+cd core.learning.tdd.romanos.test
 ```
 
-### Generate reports using Extent
+### Generate HTML report using Extent (deprecates ReportUnit)
 
 Created a report file from NUnit results.xml.
 
 ```shell
-cd core.learning.tdd.test
-dotnet add package extent
+cd core.learning.tdd.romanos.test
+
+dotnet add package extent --version 0.0.3
 dotnet test
+
+nunit3-console bin\Debug\netcoreapp2.2\core.learning.tdd.romanos.test.dll
 ```
 
 ### Running Code Coverage
@@ -135,7 +144,7 @@ Cria um arquivo de Solução que vai conter os projetos.
 ```shell
 dotnet new sln
 dotnet sln core.learning.tdd.sln add core.learning.tdd.domain/core.learning.tdd.domain.csproj
-dotnet sln core.learning.tdd.sln add core.learning.tdd.test/core.learning.tdd.test.csproj
+dotnet sln core.learning.tdd.sln add core.learning.tdd.romanos.test/core.learning.tdd.romanos.test.csproj
 
 dotnet sln list
 ```

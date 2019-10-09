@@ -1,9 +1,27 @@
-# Execute test project
+REM Sets of environments parameters
 
-packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe core.learning.tdd.romanos.test\bin\Debug\netcoreapp2.2\core.learning.tdd.romanos.dll
+REM Move to current script folder
 
-# Generates the HTML report
+cd c:\git\core-learning-tdd
 
-packages\ReportUnit.1.2.1\tools\ReportUnit.exe TestResult.xml
+REM Build the entire solution and the testes project and your's dependencies
+
+donet restore
+
+dotnet build
+
+REM Execute test project
+
+cd core.learning.tdd.romanos.test
+
+dotnet test
+
+cd ..
+
+nunit3-console.exe bin\Debug\netcoreapp2.2\core.learning.tdd.romanos.dll
+
+REM Generates the HTML report
+
+ReportUnit.exe TestResult.xml
 
 START TestResult.htm
