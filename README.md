@@ -71,7 +71,6 @@ dotnet new nunit -n core.learning.tdd.romanos.test
 cd core.learning.tdd.romanos.test
 
 dotnet add package NUnit --version 3.12.0
-dotnet add package NUnit.Console --version 3.10.0
 dotnet add package NUnit.ConsoleRunner --version 3.10.0
 dotnet add package NUnit3TestAdapter --version 3.15.1
 
