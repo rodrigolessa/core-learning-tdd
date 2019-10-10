@@ -3,11 +3,11 @@ using core.learning.tdd.romanos;
 
 namespace Tests
 {
-    // [SetUpFixture] // SetUpFixture faz com que o Setup e o TearDown execute uma vez
-    [TestFixture]
+    [TestFixture] // [SetUpFixture] // SetUpFixture faz com que o Setup e o TearDown execute uma vez
     public class ConversorDeNumeroRomanoTest
     {
         // Converter números romanos em numeral Arábico
+        protected ConversorDeNumeroRomano _romano;
 
         // TODO: Os números eram representados por sete diferentes símbolos.
 
@@ -28,11 +28,10 @@ namespace Tests
         // TODO: Nenhum símbolo pode ser repetido lado a lado por mais de 3 vezes.
         // Exemplo: o número 4 é representado pelo número IV (5 - 1) e não pelo número IIII.
 
-        //[OneTimeSetUp]
-        //public void RunBeforeAnyTests()
-        [SetUp]
-        public void Setup()
+        [OneTimeSetUp]
+        public void RunBeforeAnyTests()
         {
+            _romano = new ConversorDeNumeroRomano();
         }
 
         //[TearDown]
@@ -43,17 +42,16 @@ namespace Tests
         [Test] // , Category("Representação")]
         public void DeveEntenderOSimboloI()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("I");
+            int numero = _romano.Converte("I");
 
-            Assert.AreEqual(1, numero);
+            Assert.That(1, Is.EqualTo(numero)
+                , "O simbolo I não foi reconhecido.");
         }
 
         [Test, Category("Representação")]
         public void DeveEntenderOSimboloV()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("V");
+            int numero = _romano.Converte("V");
 
             Assert.AreEqual(5, numero);
         }
@@ -61,8 +59,7 @@ namespace Tests
         [Test, Category("Representação")]
         public void DeveEntenderOSimboloX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("X");
+            int numero = _romano.Converte("X");
 
             Assert.AreEqual(10, numero);
         }
@@ -70,8 +67,7 @@ namespace Tests
         [Test, Category("Representação")]
         public void DeveEntenderOSimboloL()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("L");
+            int numero = _romano.Converte("L");
 
             Assert.AreEqual(50, numero);
         }
@@ -79,8 +75,7 @@ namespace Tests
         [Test, Category("Representação")]
         public void DeveEntenderOSimboloC()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("C");
+            int numero = _romano.Converte("C");
 
             Assert.AreEqual(100, numero);
         }
@@ -88,8 +83,7 @@ namespace Tests
         [Test, Category("Representação")]
         public void DeveEntenderOSimboloD()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("D");
+            int numero = _romano.Converte("D");
 
             Assert.AreEqual(500, numero);
         }
@@ -97,8 +91,7 @@ namespace Tests
         [Test, Category("Representação")]
         public void DeveEntenderOSimboloM()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("M");
+            int numero = _romano.Converte("M");
 
             Assert.AreEqual(1000, numero);
         }
@@ -112,8 +105,7 @@ namespace Tests
         [TestCase("M", 1000)]
         public void DeveEntenderOsSimbolos(string simbolo, int valor)
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte(simbolo);
+            int numero = _romano.Converte(simbolo);
 
             Assert.AreEqual(valor, numero);
         }
@@ -125,8 +117,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoII()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("II");
+            int numero = _romano.Converte("II");
 
             Assert.AreEqual(2, numero);
         }
@@ -134,8 +125,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoVI()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("VI");
+            int numero = _romano.Converte("VI");
 
             Assert.AreEqual(6, numero);
         }
@@ -143,8 +133,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoXI()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("XI");
+            int numero = _romano.Converte("XI");
 
             Assert.AreEqual(11, numero);
         }
@@ -152,8 +141,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoXX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("XX");
+            int numero = _romano.Converte("XX");
 
             Assert.AreEqual(20, numero);
         }
@@ -161,8 +149,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoLI()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("LI");
+            int numero = _romano.Converte("LI");
 
             Assert.AreEqual(51, numero);
         }
@@ -170,8 +157,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoLV()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("LV");
+            int numero = _romano.Converte("LV");
 
             Assert.AreEqual(55, numero);
         }
@@ -179,8 +165,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoLX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("LX");
+            int numero = _romano.Converte("LX");
 
             Assert.AreEqual(60, numero);
         }
@@ -188,8 +173,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoCI()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("CI");
+            int numero = _romano.Converte("CI");
 
             Assert.AreEqual(101, numero);
         }
@@ -197,8 +181,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoCX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("CX");
+            int numero = _romano.Converte("CX");
 
             Assert.AreEqual(110, numero);
         }
@@ -206,8 +189,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoDX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("DX");
+            int numero = _romano.Converte("DX");
 
             Assert.AreEqual(510, numero);
         }
@@ -215,8 +197,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoDC()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("DC");
+            int numero = _romano.Converte("DC");
 
             Assert.AreEqual(600, numero);
         }
@@ -224,8 +205,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoMX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("MX");
+            int numero = _romano.Converte("MX");
 
             Assert.AreEqual(1010, numero);
         }
@@ -233,8 +213,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderDoisSimbolosComoMD()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("MD");
+            int numero = _romano.Converte("MD");
 
             Assert.AreEqual(1500, numero);
         }
@@ -246,8 +225,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderMaisSimbolosComoIII()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("III");
+            int numero = _romano.Converte("III");
 
             Assert.AreEqual(3, numero);
         }
@@ -255,8 +233,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderMaisSimbolosComoXXII()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("XXII");
+            int numero = _romano.Converte("XXII");
 
             Assert.AreEqual(22, numero);
         }
@@ -264,8 +241,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderMaisSimbolosComoMDX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("MDX");
+            int numero = _romano.Converte("MDX");
 
             Assert.AreEqual(1510, numero);
         }
@@ -273,8 +249,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderMaisSimbolosComoMDXV()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("MDXV");
+            int numero = _romano.Converte("MDXV");
 
             Assert.AreEqual(1515, numero);
         }
@@ -282,8 +257,7 @@ namespace Tests
         [Test, Category("Adição")]
         public void DeveEntenderMaisSimbolosComoDCLXII()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("DCLXII");
+            int numero = _romano.Converte("DCLXII");
 
             Assert.AreEqual(662, numero);
         }
@@ -295,8 +269,7 @@ namespace Tests
         [Test, Category("Subtração")]
         public void DeveEntenderSimbolosInvertidosComoIV()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("IV");
+            int numero = _romano.Converte("IV");
 
             Assert.AreEqual(4, numero);
         }
@@ -304,8 +277,7 @@ namespace Tests
         [Test, Category("Subtração")]
         public void DeveEntenderSimbolosInvertidosComoXXIV()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("XXIV");
+            int numero = _romano.Converte("XXIV");
 
             Assert.AreEqual(24, numero);
         }
@@ -313,8 +285,7 @@ namespace Tests
         [Test, Category("Subtração")]
         public void DeveEntenderSimbolosInvertidosComoDXLIIX()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("DXLIIX");
+            int numero = _romano.Converte("DXLIIX");
 
             Assert.AreEqual(548, numero);
         }
@@ -326,8 +297,7 @@ namespace Tests
         [Test, Category("Falha")]
         public void DeveFalharComQuatroSimbolosIguaisIIII()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("IIII");
+            int numero = _romano.Converte("IIII");
 
             Assert.AreEqual(0, numero);
         }
@@ -335,8 +305,7 @@ namespace Tests
         [Test, Category("Falha")]
         public void DeveFalharComQuatroSimbolosIguaisVVVV()
         {
-            ConversorDeNumeroRomano romano = new ConversorDeNumeroRomano();
-            int numero = romano.Converte("VVVV");
+            int numero = _romano.Converte("VVVV");
 
             Assert.AreEqual(0, numero);
         }
