@@ -24,6 +24,8 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore21
 ### Prerequisites
 
  - .NET Core SDK
+   - https://dotnet.microsoft.com/download/dotnet-core/2.2
+   - https://download.visualstudio.microsoft.com/download/pr/40c1dd82-671c-4974-919d-ac8a61ef5a91/49ab67c335878f4a5bdd84e14c76708f/dotnet-sdk-2.2.402-win-x64.exe
  - .NET Core CLI
  - Visual Studio Code with some plugins:
   - .Net Core Test Explorer
@@ -46,7 +48,7 @@ dotnet --info
 
 If necessary, you can changed the current SDK version of the project, you can upgrade, or downgrade the SDK.
 ```shell
-dotnet new globaljson --sdk-version 2.2.108 --force
+dotnet new globaljson --sdk-version 2.2.402 --force
 ```
 
 Verificar se o template do nunit já está instalado.

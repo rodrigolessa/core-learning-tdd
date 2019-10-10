@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using core.learning.tdd.contencioso.Services;
 
@@ -12,15 +15,15 @@ namespace Tests
         // DD - 2 dígitos verificadores da integridade do número, calculados a partir de todos os demais dígitos;
         // AAAA - 4 dígitos indicadores do ano da autuação;
         // J - 1 dígito identificador do segmento do Judiciário a que pertence o processo:
-            // - 1 para o Supremo Tribunal Federal, 
-            // - 2 para o Conselho Nacional de Justiça, 
-            // - 3 para o Superior Tribunal de Justiça, 
-            // - 4 para a Justiça Federal, 
-            // - 5 para a Justiça do Trabalho, 
-            // - 6 para a Justiça Eleitoral, 
-            // - 7 para a Justiça Militar da União, 
-            // - 8 para a Justiça dos Estados e do Distrito Federal e Territórios,
-            // - 9 para a Justiça Militar Estadual;
+        // - 1 para o Supremo Tribunal Federal, 
+        // - 2 para o Conselho Nacional de Justiça, 
+        // - 3 para o Superior Tribunal de Justiça, 
+        // - 4 para a Justiça Federal, 
+        // - 5 para a Justiça do Trabalho, 
+        // - 6 para a Justiça Eleitoral, 
+        // - 7 para a Justiça Militar da União, 
+        // - 8 para a Justiça dos Estados e do Distrito Federal e Territórios,
+        // - 9 para a Justiça Militar Estadual;
         // TR - 2 dígitos que identificam o tribunal ou conselho do segmento do Poder Judiciário a que pertence o processo;
         // OOOO - 4 dígitos identificadores da unidade de origem do processo.
 

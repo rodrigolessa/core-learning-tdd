@@ -13,9 +13,6 @@
       "path": "core.learning.tdd.romanos.test"
     },
     {
-      "path": "core.learning.tdd.romanos.repository"
-    },
-    {
       "path": "core.learning.tdd.application"
     },
     {
@@ -23,6 +20,21 @@
     },
     {
       "path": "core.learning.tdd.webapp"
+    },
+    {
+      "path": "core.learning.tdd.contencioso"
+    },
+    {
+      "path": "core.learning.tdd.contencioso.test"
+    },
+    {
+      "path": "core.learning.tdd.financeiro"
+    },
+    {
+      "path": "core.learning.tdd.financeiro.repository"
+    },
+    {
+      "path": "core.learning.tdd.financeiro.test"
     }
   ]
 }

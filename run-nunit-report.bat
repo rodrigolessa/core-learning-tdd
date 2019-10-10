@@ -16,12 +16,12 @@ cd core.learning.tdd.romanos.test
 
 dotnet test
 
-cd ..
+dotnet publish
 
-nunit3-console.exe bin\Debug\netcoreapp2.2\core.learning.tdd.romanos.dll
+nunit3-console.exe bin\Debug\netcoreapp2.2\publish\core.learning.tdd.romanos.test.dll
 
 REM Generates the HTML report
 
-ReportUnit.exe TestResult.xml
+extent TestResult.xml
 
 START TestResult.htm

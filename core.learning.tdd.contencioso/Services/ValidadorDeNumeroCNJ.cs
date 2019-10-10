@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace core.learning.tdd.contencioso.Services
 {
@@ -12,8 +13,11 @@ namespace core.learning.tdd.contencioso.Services
             if (numeroDoProcesso.Length < 20)
                 throw new Exception("Informa um número válido");
 
-			// TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code.
-            string n = Regex.Replace(args[0], "[^0-9]", "");
+            // Padrão da expressão regular para qualquer caracter que não for número
+            string pattern = "[^0-9]";
+
+			// TODO: Melhorar nome da variável "n" para mais amigável. Referência para Clean Code.
+            string n = Regex.Replace(numeroDoProcesso, pattern, string.Empty);
 
             if (n.Length != 20)
                 throw new Exception("Número inválido");
@@ -29,26 +33,28 @@ namespace core.learning.tdd.contencioso.Services
 
             UInt64.TryParse(processo.Item1, out UInt64 p1);
 
-// TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
+            // TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
             string resto1 = (p1 % 97).ToString();
 
             UInt64.TryParse($"{resto1}{processo.Item3}{processo.Item4}{processo.Item5}", out UInt64 p2);
 
-// TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
+            // TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
             string resto2 = (p2 % 97).ToString();
 
-// TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
+            // TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
             string c = $"{resto2}{processo.Item6}00";
             
-// TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
+            // TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
             UInt64.TryParse(c, out UInt64 s);
             UInt64.TryParse(processo.Item2, out UInt64 d);
 
-// TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
+            // TODO: Melhorar nome da variável para mais amigável. Referência para Clean Code
             var r = 98 - (s % 97);
 
             if (d == r)
                 return true;
+
+            return false;
     	}
     }
 }

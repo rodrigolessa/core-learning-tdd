@@ -3,7 +3,7 @@ REM Creating TDD projects
 cd c:\git\core-learning-tdd
 
 REM Framework estável
-dotnet new globaljson --sdk-version 2.2.108 --force
+dotnet new globaljson --sdk-version 2.2.402 --force
 
 REM Projeto para regras de negócio do domínio
 dotnet new classlib -n core.learning.tdd.romanos -f netcoreapp2.2 -lang C#
@@ -57,6 +57,9 @@ dotnet sln list
 
 REM Adicionar dependência do domínio ao projeto de teste
 dotnet add core.learning.tdd.romanos.test/core.learning.tdd.romanos.test.csproj reference core.learning.tdd.romanos/core.learning.tdd.romanos.csproj
+
+REM Adicionar dependência do domínio ao projeto de teste
+dotnet add core.learning.tdd.contencioso.test/core.learning.tdd.contencioso.test.csproj reference core.learning.tdd.contencioso/core.learning.tdd.contencioso.csproj
 
 REM Abrir projeto de teste e adicionar pacotes
 cd core.learning.tdd.romanos.test
