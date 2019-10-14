@@ -170,6 +170,23 @@ dotnet new webapi -n core.learning.tdd.webapi
 dotnet sln add core.learning.tdd.webapi/core.learning.tdd.webapi.csproj
 ```
 
+Publicando projeto de API no ISS com o Kestrel
+
+Com o servidor web Kestrel, não é preciso ficar se preocupando com compatibilidades de tecnologias antigas.
+
+Você pode usar o Kestrel sozinho ou como um servidor proxy reverso (recebe solicitações HTTP da Internet) com o IIS (pode ser utilizado como um módulo), Nginx ou Apache.
+
+É preciso fazer download do Runtime(Microsoft .Net Core Windows Server Hosting).
+
+https://dotnet.microsoft.com/download/dotnet-core/2.2
+
+Após a instalação, é recomendável efetuar os seguintes comandos para parar/iniciar o IIS.
+
+```shell
+net stop was /y
+net start w3svc
+```
+
 Discoverability with Swagger.
 
 ### Utilizando este repositório

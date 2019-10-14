@@ -4,9 +4,9 @@ rem @set scriptPath=%~dp0%run-trx-report-core.ps1
 rem echo "& '%scriptPath%'"
 rem PowerShell -NoProfile -ExecutionPolicy Bypass -noexit -Command "& '%scriptPath%'"
 
-dotnet build
+cd C:\git\core-learning-tdd\core.learning.tdd.romanos.test
 
-cd core.learning.tdd.romanos.test
+dotnet build
 
 dotnet test --logger trx;LogFileName=resultados.trx
 
@@ -20,4 +20,4 @@ cd TestResults
 
 START resultados.trx.html
 
-rem @PAUSE
+@pause
