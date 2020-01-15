@@ -23,7 +23,7 @@ namespace Tests
         // TODO: Algarismos de menor ou igual valor à direita são somados ao algarismo de maior valor.
         // TODO: Algarismos de menor valor à esquerda são subtraídos do algarismo de maior valor.
         // Exemplo:   XV representa 15 (10 + 5) 
-        // e o número XXVIII representa 28 (10 + 10 + 5 + 1 + 1 + 1). 
+        // e o número XXVIII representa 28 (10 + 10 + 5 + 1 + 1 + 1).
         // e o número IX representa 9 (10 - 1). 
         // TODO: Nenhum símbolo pode ser repetido lado a lado por mais de 3 vezes.
         // Exemplo: o número 4 é representado pelo número IV (5 - 1) e não pelo número IIII.

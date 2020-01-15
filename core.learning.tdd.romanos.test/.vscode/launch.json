@@ -1,0 +1,85 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "/home/Adm/Development/scd-api/Application/bin/Debug/netcoreapp3.0/Application.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PORT": "8000",
+        "LoggerSettings__MaximumLogEntriesPerRequest": "30",
+        "LoggerSettings__ServiceEndpoint": "https://logger-endpoint",
+        "LoggerSettings__AccumulationPeriodInSeconds": "30",
+        "LoggerSettings__MinimumLogSeverity": "Debug",
+        "LoggerSettings__RequestTimeoutInSeconds": "30",
+        "Authentication__Authority": "http://localhost:8080/auth",
+        "ConnectionStrings__PostgreSQL": "Host=localhost; Port=5432; Database=scd_db; Username=scd_app_user; Password=scd_app_password;",
+        "DefaultIssuerDocumentNumber": "12345678901234",
+        "PaginationSettings__FetchMaxLimit": "500",
+        "PaginationSettings__FetchDefaultLimit": "50",
+        "Authentication__HealthCheck": "http://localhost:8080/auth/healthcheck",
+        "Authentication__ServiceName": "AuthService",
+        "SCD_DB__ServiceName": "Database",
+        "SCD_DB__ConnectionString": "Host=localhost; Port=5432; Database=scd_db; Username=scd_app_user; Password=scd_app_password;",
+        "HttpClientSettings__DnsRefreshTimeoutInSeconds": "60",
+        "HttpClientSettings__PooledConnectionLifetimeInSeconds": "60",
+        "PaginationSettings__FetchMaxPageSize": "500",
+        "PaginationSettings__FetchDefaultPageSize": "50",
+        "ChromiumExecutablePath": "/usr/bin/chromium-browser",
+        "Banking__ClientAssertionType": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+        "Banking__AccessTokenUrl": "https://sandbox-accounts.openbank.stone.com.br/auth/realms/stone_bank/protocol/openid-connect/token/",
+        "Banking__PathSandboxKey": "/home/Adm/Downloads/mykey.pem",
+        "Banking__Realm": "stone_bank",
+        "Banking__AuditAccessTokenUrl": "https://sandbox-accounts.openbank.stone.com.br/auth/realms/stone_bank",
+        "Banking__ClientId": "3beb458b-8a46-4d91-8489-0839c75c61f8",
+        "Banking__GrantType": "client_credentials",
+        "Banking__UserAgent": "Sige",
+        "Banking__Pem": "-----BEGIN RSA PRIVATE KEY-----\n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\n-----END RSA PRIVATE KEY-----",
+        "TreasuryAuthentication__ClientId": "4a60a63e-e9c0-49e4-bfd4-05b27bbc0db6",
+        "TreasuryAuthentication__ClientSecret": "p-Iw5Gis8wYPBmj_rSjoB38I7FPR7-YFWguJZlleCYCDnwyWYMJqmc4dACMSgaokd-C_3ERPG9PUdW0SrLArRw",
+        "TreasuryAuthentication__GrantType": "client_credentials",
+        "TreasuryAuthentication__AccessTokenUrl": "https://idp-qas.stone.com.br/nidp/oauth/nam/token",
+        "TreasuryAuthentication__HealthCheckUrl": "https://idp-qas.stone.com.br/nidp/app/heartbeat",
+        "TreasuryAuthentication__ServiceName": "TresuryIdmService",
+        "TreasuryClient__HealthCheckUrl": "http://api.ins.stg.dca.treasury.stone.com.br/assets-trader/heartbeat",
+        "TreasuryClient__ServiceName": "TresuryClient",
+        "TreasuryClient__OrderUrl": "http://api.ins.stg.dca.treasury.stone.com.br/assets-trader/api/orders",
+        "TreasuryClient__OrderUpdateUrl": "http://api.stg.dca.treasury.stone.com.br/assets-manager/api/orders-queue/"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "Attach to MySite.Web (Docker)",
+      "type": "coreclr",
+      "request": "attach",
+      "requireExactSource": false,
+      "sourceFileMap": {
+        "/application": "${workspaceRoot}"
+      },
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "debuggerPath": "/release/vsdbg/vsdbg",
+        //"debuggerPath": "/vsdbg/vsdbg",
+        "pipeProgram": "docker",
+        "pipeCwd": "${workspaceRoot}",
+        "quoteArgs": false,
+        "pipeArgs": ["exec -i scd-api_scd-api-vscode_1"]
+      }
+    }
+  ]
+}

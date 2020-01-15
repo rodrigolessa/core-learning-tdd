@@ -206,6 +206,9 @@ Installation - Run from PowerShell command with admin rights.
 choco install gauge # installation
 ```
 
+Instalation on Ubuntu:
+https://docs.gauge.org/getting_started/installing-gauge.html?os=linux&language=csharp&ide=vscode
+
 ```shel
 mkdir core.learning.gauge
 cd    core.learning.gauge
